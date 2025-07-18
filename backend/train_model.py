@@ -45,11 +45,11 @@ def process_message(message, wordlist=None):
     if not message or not isinstance(message, str):
         raise ValueError("Message must be a non-empty string.")
 
-    words = message.lower()  # Convert to lowercase
-    words = word_tokenize(words)  # Tokenize
-    words = [word for word in words if len(word) > 1]  # Remove single-character tokens
-    words = [word for word in words if word not in stop_words]  # Remove stop words
-    words = [stemmer.stem(word) for word in words]  # Apply stemming
+    words = message.lower()  
+    words = word_tokenize(words)  
+    words = [word for word in words if len(word) > 1]  
+    words = [word for word in words if word not in stop_words]  
+    words = [stemmer.stem(word) for word in words]  
     return words
 
 from sklearn.feature_extraction.text import CountVectorizer
