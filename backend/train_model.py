@@ -84,7 +84,6 @@ def spam(message, model=nb_model, vectorizer=vectorizer, percentage=True):
         print(f"Spam probability: {spam_prob * 100:.2f}%")
     return spam_prob > 0.5 if not percentage else spam_prob * 100
 
-# Save the model and vectorizer
 import joblib
 joblib.dump(nb_model, 'spam_classifier_model.pkl')
 joblib.dump(vectorizer, 'count_vectorizer.pkl')
